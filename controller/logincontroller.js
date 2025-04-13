@@ -27,7 +27,7 @@ export const logincontroller = async (req,res)=>{
       let token = jwt.sign({email:emailExist.email},process.env.JWT_SECRET_KEY)
       console.log("token",token);
       res.status(200).json({
-        message:"login succesfully"
+        message:"login succesfully",token
       })
     } catch (error) {
         console.log(error)    
